@@ -52,15 +52,16 @@ int main()
 
 double sum(double x, double E, int &n)
 {
-    double a, S = 0.0;
+    double a = x - 1; double S = 0.0;
+    n = 1;
 
-    do
+    while (abs(a) > E)
     {
-        a = (pow(-1, n) * pow((x - 1), (n + 1)) / (n + 1));
+        a *= -(x - 1) * ((double)n / (n + 1));
 
         S += a;
         n++;
-    } while (abs(a) > E);
+    } 
 
     return S;
 }
